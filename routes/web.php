@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -13,6 +14,17 @@ use App\Http\Controllers\ProfileController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Dashboard
+|--------------------------------------------------------------------------
+*/
+
+Route::view('/dashboard', 'dashboard')
+    ->middleware(['auth'])
+    ->name('dashboard');
 
 
 /*
@@ -90,3 +102,4 @@ Route::get('/test-user', function () {
 */
 
 require __DIR__.'/auth.php';
+
